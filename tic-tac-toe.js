@@ -1,9 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const board = document.querySelector("#board");
+    const board = document.getElementById("board");
     const squares = board.querySelectorAll(":scope > div");
-    const status = document.querySelector("#status");
-    const newGame = document.querySelector("#reset");
+    const status = document.getElementById("status");
+    const newGame = document.querySelector("button");
 
     let currentPlayer = "X";
     let gameOver = false;
@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
         [2, 4, 6]
     ];
 
-    // Exercise 1: Style all nine squares
+    // Exercise 1: Style the nine squares
     squares.forEach(function (square) {
         square.classList.add("square");
     });
 
-    // Exercise 2: Place X or O when a square is clicked
+    // Exercises 2, 3, 4 and 6
     squares.forEach(function (square, index) {
         square.addEventListener("click", function () {
             if (gameOver || gameState[index] !== "") {
@@ -35,15 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
             gameState[index] = currentPlayer;
             square.textContent = currentPlayer;
             square.classList.add(currentPlayer);
+            square.classList.remove("hover");
 
-            // Exercise 4: Check whether the current player won
-            const hasWon = winningCombinations.some(function (combination) {
+            const winner = winningCombinations.some(function (combination) {
                 return combination.every(function (position) {
                     return gameState[position] === currentPlayer;
                 });
             });
 
-            if (hasWon) {
+            if (winner) {
                 status.textContent =
                     "Congratulations! " + currentPlayer + " is the Winner!";
                 status.classList.add("you-won");
@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
         });
 
-        // Exercise 3: Add and remove the hover style
         square.addEventListener("mouseenter", function () {
             if (!gameOver && gameState[index] === "") {
                 square.classList.add("hover");
