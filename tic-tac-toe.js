@@ -3,7 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const board = document.getElementById("board");
     const squares = board.querySelectorAll(":scope > div");
     const status = document.getElementById("status");
-    const newGame = document.querySelector("button");
+
+    // Find the New Game button by its text
+    const buttons = document.querySelectorAll("button");
+    let newGame = null;
+
+    buttons.forEach(function (button) {
+        if (button.textContent.trim() === "New Game") {
+            newGame = button;
+        }
+    });
 
     let currentPlayer = "X";
     let gameOver = false;
@@ -20,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         [2, 4, 6]
     ];
 
-    // Exercise 1: Style the nine squares
+    // Exercise 1: Style each square
     squares.forEach(function (square) {
         square.classList.add("square");
     });
@@ -65,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Exercise 5: Restart the game
+    // Exercise 5: Reset the game
     if (newGame) {
         newGame.addEventListener("click", function () {
             gameState = ["", "", "", "", "", "", "", "", ""];
@@ -83,4 +92,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
