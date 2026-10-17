@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const squares = board.querySelectorAll(":scope > div");
     const status = document.getElementById("status");
 
-    // Find the New Game button by its text
+    // Game button
     const buttons = document.querySelectorAll("button");
     let newGame = null;
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         [2, 4, 6]
     ];
 
-    // Exercise 1: Style each square
+    // Exercise 1: Styling each square
     squares.forEach(function (square) {
         square.classList.add("square");
     });
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Exercise 5: Reset the game
+    // Exercise 5: Reseting the game
     if (newGame) {
         newGame.addEventListener("click", function () {
             gameState = ["", "", "", "", "", "", "", "", ""];
