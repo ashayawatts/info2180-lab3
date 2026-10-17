@@ -2,14 +2,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const squares = document.querySelectorAll("#board div");
 
-    squares.forEach(function (square) {
-        square.classList.add("square");
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const squares = document.querySelectorAll("#board div");
-
     let currentPlayer = "X";
 
     // Exercise 1: Styling the squares
@@ -30,14 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});
-// Exercise 3: Highlighting a square when the mouse moves over it
-squares.forEach(function (square) {
-    square.addEventListener("mouseover", function () {
-        square.classList.add("hover");
-    });
 
-    square.addEventListener("mouseout", function () {
-        square.classList.remove("hover");
+    // Exercise 3: Highlighting a square when the mouse moves over it
+    squares.forEach(function (square) {
+        square.addEventListener("mouseover", function () {
+            square.classList.add("hover");
+        });
+
+        square.addEventListener("mouseout", function () {
+            square.classList.remove("hover");
+        });
     });
 });
+
