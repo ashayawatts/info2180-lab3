@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Exercise 3: Highlighting a square on hover
     squares.forEach(function (square) {
-        square.addEventListener("mouseover", function () {
+        square.addEventListener("mouseenter", function () {
             square.classList.add("hover");
         });
 
-        square.addEventListener("mouseout", function () {
+        square.addEventListener("mouseleave", function () {
             square.classList.remove("hover");
         });
     });
 });
 
-        
+
