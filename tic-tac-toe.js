@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Exercise 3: Highlighting a square when the mouse moves over it
+   
+    // Exercise 3: Highlighting a square on hover
     squares.forEach(function (square) {
         square.addEventListener("mouseover", function () {
             square.classList.add("hover");
@@ -33,5 +34,3 @@ document.addEventListener("DOMContentLoaded", function () {
             square.classList.remove("hover");
         });
     });
-});
-
