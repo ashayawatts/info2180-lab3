@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentPlayer = "X";
 
-    // Exercise 1: Style the squares
+    // Exercise 1: Styling the squares
     squares.forEach(function (square) {
         square.classList.add("square");
     });
 
-    // Exercise 2: Add X or O when a square is clicked
+    // Exercise 2: Adding X or O when a square is clicked
     squares.forEach(function (square) {
         square.addEventListener("click", function () {
             square.textContent = currentPlayer;
@@ -29,5 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPlayer = "X";
             }
         });
+    });
+});
+// Exercise 3: Highlighting a square when the mouse moves over it
+squares.forEach(function (square) {
+    square.addEventListener("mouseover", function () {
+        square.classList.add("hover");
+    });
+
+    square.addEventListener("mouseout", function () {
+        square.classList.remove("hover");
     });
 });
